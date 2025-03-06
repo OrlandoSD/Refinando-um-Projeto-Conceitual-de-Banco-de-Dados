@@ -1,0 +1,6 @@
+Explicação do Fluxo:
+Aluno se matricula em um Curso.
+Dentro do Curso, o Aluno cursa diversas Disciplinas.
+Cada Disciplina é ministrada por um Professor, e o Professor pode ensinar várias disciplinas.
+O Curso possui uma Coordenação, que é gerenciada por um Coordenador.
+O vínculo entre Aluno, Curso, Disciplina, Professor e Coordenação é centralizado na tabela Ensino.
