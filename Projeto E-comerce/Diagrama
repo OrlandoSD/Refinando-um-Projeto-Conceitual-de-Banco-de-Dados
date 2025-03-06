@@ -1,27 +1,32 @@
-Diagrama de Entidades e Relacionamentos (DER)
-A seguir, um esboço das entidades e seus relacionamentos:
+[Cliente] ----< [Pedido] >---- [Produto] ----< [Fornecedor] | | | v v [Vendedor] [Pagamento]
 
-Produto
+Explicação:
+[Cliente]
 
-Relacionado com Estoque, Vendedor, Fornecedor, e Pedido.
-Estoque
+Relacionado a [Pedido], indicando que um cliente pode criar vários pedidos.
 
-Relacionado com Produto (controle da quantidade).
-Vendedor
+Conexão com [Pagamento], para armazenar múltiplas formas de pagamento cadastradas.
 
-Relacionado com Produto (associação entre vendedor e produtos).
-Fornecedor
+[Pedido]
 
-Relacionado com Produto (fornecedor de produtos).
-Cliente
+Conecta-se a [Produto] por meio de um relacionamento N:M (muitos para muitos). Representado pela entidade associativa Pedido_Produto (não mostrada explicitamente na simplificação).
 
-Relacionado com Pedido, Pagamento, Endereço, e Formas de Pagamento.
-Pedido
+Relaciona-se também com [Cliente].
 
-Relacionado com Produto, Cliente, Pagamento, Entrega, e Cancelamento.
-Pagamento
+[Produto]
 
-Relacionado com Pedido (detalhes do pagamento para um pedido).
-Entrega
+Associado diretamente a um único [Fornecedor].
 
-Relacionado com Pedido (status e código de rastreio).
+Relacionado com [Vendedor], caso seja comercializado por terceiros.
+
+[Fornecedor]
+
+Fornece vários [Produto].
+
+[Vendedor]
+
+Relacionado a [Produto].
+
+[Pagamento]
+
+Associa-se a [Cliente] e é utilizado em cada pedido, garantindo flexibilidade no pagamento.
