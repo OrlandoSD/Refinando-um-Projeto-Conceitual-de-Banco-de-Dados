@@ -1,0 +1,54 @@
+Entidades e Relacionamentos
+Pessoa
+
+Representa tanto alunos quanto professores.
+Campos: ID_Pessoa, Nome, Tipo_Pessoa (Aluno/Professor), CPF, Email, etc.
+Departamento
+
+Representa os departamentos (Ex: Departamento de Computação, Engenharia).
+Campos: ID_Departamento, Nome_Departamento.
+Professor
+
+Representa os professores que lecionam as disciplinas.
+Relacionado com o departamento e a coordenação de curso.
+Campos: ID_Professor, ID_Departamento (FK), Nome_Professor, Especialização.
+Curso
+
+Representa os cursos oferecidos pela universidade.
+Campos: ID_Curso, Nome_Curso.
+Aluno
+
+Representa os alunos matriculados na universidade.
+Cada aluno pode estar matriculado em um ou mais cursos.
+Campos: ID_Aluno, ID_Curso (FK), Nome_Aluno, Email, etc.
+Disciplina
+
+Representa as disciplinas oferecidas.
+Cada disciplina é associada a um único professor.
+Campos: ID_Disciplina, Nome_Disciplina, ID_Professor (FK), Ciclo_Vida (Semestral), Status (Ativa/Inativa).
+Matriculado
+
+Relaciona os alunos às disciplinas.
+Cada aluno pode estar matriculado em várias disciplinas.
+Campos: ID_Aluno (FK), ID_Disciplina (FK), Nota_Prova1, Nota_Prova2, Nota_Trabalho, Nota_Final.
+Disciplina_Curso
+
+Relaciona as disciplinas aos cursos em que são oferecidas.
+Campos: ID_Disciplina (FK), ID_Curso (FK).
+Pré_Requisitos
+
+Relaciona disciplinas com seus pré-requisitos.
+Um pré-requisito pode ser comum a várias disciplinas.
+Campos: ID_Disciplina (FK), ID_Pre_Requisito (FK).
+Oferta_de_Disciplina
+
+Relaciona as disciplinas às ofertas em um determinado semestre.
+Campos: ID_Oferta, ID_Disciplina (FK), Ano_Semestre, Status_Oferta (Ativa, Finalizada).
+Extensão
+
+Representa cursos de extensão oferecidos pela universidade.
+Campos: ID_Extensao, Nome_Extensao, Descricao.
+Extensão_has_Alunos
+
+Relaciona os alunos às extensões nas quais estão matriculados.
+Campos: ID_Aluno (FK), ID_Extensao (FK).

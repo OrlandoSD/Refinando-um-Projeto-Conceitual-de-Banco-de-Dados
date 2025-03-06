@@ -1,0 +1,6 @@
+[Cliente] --< Pedido >-- [Análise do Pedido]
+    |
+    |
+  < FK >
+    |
+[OrdemServico] --< Responsável >

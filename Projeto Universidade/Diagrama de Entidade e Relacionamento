@@ -1,0 +1,8 @@
+[Pessoa] ----< [Aluno] >---- [Curso] ----< [Disciplina_Curso] >---- [Disciplina] 
+    |                                  |
+    |                                  v
+    v                          [Pré_Requisitos] <---- [Disciplina]
+[Professor] ----< [Matriculado] >---- [Oferta_de_Disciplina] 
+                    |                           |
+                    v                           v
+             [Nota_Prova1] -- [Nota_Final] -- [Nota_Prova2] -- [Nota_Trabalho]

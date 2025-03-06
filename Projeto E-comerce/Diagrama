@@ -1,0 +1,27 @@
+Diagrama de Entidades e Relacionamentos (DER)
+A seguir, um esboço das entidades e seus relacionamentos:
+
+Produto
+
+Relacionado com Estoque, Vendedor, Fornecedor, e Pedido.
+Estoque
+
+Relacionado com Produto (controle da quantidade).
+Vendedor
+
+Relacionado com Produto (associação entre vendedor e produtos).
+Fornecedor
+
+Relacionado com Produto (fornecedor de produtos).
+Cliente
+
+Relacionado com Pedido, Pagamento, Endereço, e Formas de Pagamento.
+Pedido
+
+Relacionado com Produto, Cliente, Pagamento, Entrega, e Cancelamento.
+Pagamento
+
+Relacionado com Pedido (detalhes do pagamento para um pedido).
+Entrega
+
+Relacionado com Pedido (status e código de rastreio).

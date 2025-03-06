@@ -1,0 +1,16 @@
+Relações e Explicações
+Produto e Fornecedor: Cada produto tem um fornecedor. A tabela Produto possui uma chave estrangeira para a tabela Fornecedor.
+
+Produto e Estoque: A tabela Estoque controla a quantidade disponível de cada produto. Cada produto tem uma relação com o estoque através da chave estrangeira produto_id.
+
+Produto e Vendedor: O produto pode ser vendido por múltiplos vendedores. A tabela de relacionamento Produto_Vendedor associa o produto com o vendedor. A chave composta de produto_id e vendedor_id garante que cada combinação de produto e vendedor seja única.
+
+Cliente e Endereço: Um cliente pode ter múltiplos endereços associados, o que é gerido pela tabela Endereco. Cada endereço está vinculado a um cliente através da chave estrangeira cliente_id.
+
+Pedido e Cliente/Endereco: Um pedido é feito por um cliente e possui um endereço associado. As tabelas Pedido e Endereco estão relacionadas a Cliente.
+
+Pedido e Produto: Cada pedido pode conter um ou mais produtos. A tabela Pedido_Produto faz a relação entre Pedido e Produto.
+
+Pedido e Pagamento: Cada pedido possui um pagamento associado, com informações sobre o método de pagamento e o valor pago.
+
+Pedido e Entrega: Cada pedido tem um status de entrega e um código de rastreio. A tabela Entrega está associada a Pedido e contém essas informações.

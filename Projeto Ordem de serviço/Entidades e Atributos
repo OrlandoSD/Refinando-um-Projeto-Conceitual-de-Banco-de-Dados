@@ -1,0 +1,44 @@
+Entidades e Atributos:
+Cliente
+
+ID_Cliente (PK) – Identificador único do cliente
+Nome_Cliente – Nome do cliente
+Email – Email do cliente
+Telefone – Telefone do cliente
+Endereco – Endereço do cliente
+Data_Cadastro – Data de cadastro do cliente
+Pedido
+
+ID_Pedido (PK) – Identificador único do pedido
+ID_Cliente (FK) – Referência ao cliente que fez o pedido
+Data_Pedido – Data em que o pedido foi feito
+Status – Status do pedido (Ex: "Pendente", "Em andamento", "Concluído")
+Descricao – Descrição do pedido
+Responsável
+
+ID_Responsavel (PK) – Identificador único do responsável
+Nome_Responsavel – Nome do responsável
+Email – Email do responsável
+Telefone – Telefone do responsável
+Cargo – Cargo do responsável
+Ordem de Serviço
+
+ID_OrdemServico (PK) – Identificador único da ordem de serviço
+ID_Pedido (FK) – Referência ao pedido associado
+ID_Responsavel (FK) – Referência ao responsável pela ordem de serviço
+Data_Inicio – Data de início da execução da ordem de serviço
+Data_Fim – Data de término da ordem de serviço (se já concluída)
+Status – Status da ordem de serviço (Ex: "Aberto", "Em andamento", "Concluído")
+Descricao – Descrição da ordem de serviço
+Análise do Pedido
+
+ID_Analise (PK) – Identificador único da análise
+ID_Pedido (FK) – Referência ao pedido analisado
+Status_Analise – Status da análise (Ex: "Aprovado", "Rejeitado", "Em análise")
+Descricao_Analise – Descrição detalhada da análise
+Data_Analise – Data da análise realizada
+Relacionamentos:
+Um Cliente pode fazer vários Pedidos, mas um Pedido pertence a um único Cliente.
+Cada Pedido pode gerar uma ou mais Ordens de Serviço, mas uma Ordem de Serviço está associada a um único Pedido.
+Cada Ordem de Serviço é gerenciada por um único Responsável, mas um Responsável pode ser associado a várias Ordens de Serviço.
+Cada Pedido tem uma Análise do Pedido associada. Um Pedido pode ter apenas uma Análise do Pedido, mas uma Análise pertence a um único Pedido.

@@ -1,0 +1,36 @@
+Entidades e Relacionamentos:
+Produto:
+
+Cada produto é único, tem um fornecedor associado e pode ser vendido por diferentes vendedores.
+Os produtos são disponibilizados na plataforma online e podem ser parte de um ou mais pedidos.
+Relacionado a estoques, fornecedores e pedidos.
+Estoque:
+
+O estoque armazena a quantidade disponível de cada produto.
+Relacionado ao produto (Produto-Estoque), para determinar a quantidade disponível para venda.
+Vendedor:
+
+Os vendedores podem ser tanto internos quanto terceirizados. Cada produto pode ser associado a um vendedor específico.
+Relacionado com o produto (Produto-Vendedor), para determinar quem está vendendo o produto.
+Cliente (Pessoa Física/Pessoa Jurídica):
+
+O cliente pode se cadastrar utilizando o CPF (Pessoa Física) ou CNPJ (Pessoa Jurídica). Não pode ter as duas informações no mesmo cadastro.
+O endereço do cliente é usado para calcular o valor do frete e determinar a entrega.
+O cliente pode fazer múltiplos pedidos.
+Pedido:
+
+O pedido é gerado por um cliente e pode conter um ou mais produtos.
+Cada pedido tem informações como status de entrega, endereço, e um período de devolução de 7 dias.
+O pedido pode ser cancelado.
+Fornecedor:
+
+O fornecedor fornece os produtos que são vendidos na plataforma.
+Relacionado com o produto para determinar qual fornecedor fornece qual produto.
+Pagamento:
+
+O cliente pode ter várias formas de pagamento (Crédito, Débito, à vista, Pix).
+Cada pagamento está vinculado a um pedido.
+Entrega:
+
+Cada pedido tem um status de entrega e um código de rastreio para acompanhamento.
+Relacionado com o pedido.
