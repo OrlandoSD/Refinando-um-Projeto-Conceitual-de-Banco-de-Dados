@@ -1,6 +1,73 @@
-Explicação do Fluxo:
-Aluno se matricula em um Curso.
-Dentro do Curso, o Aluno cursa diversas Disciplinas.
-Cada Disciplina é ministrada por um Professor, e o Professor pode ensinar várias disciplinas.
-O Curso possui uma Coordenação, que é gerenciada por um Coordenador.
-O vínculo entre Aluno, Curso, Disciplina, Professor e Coordenação é centralizado na tabela Ensino.
+Fluxo de Informações e Atividades
+Aluno se Matricula no Curso
+
+Ação: O aluno se matricula em um curso (Ex: Computação, Engenharia).
+Tabelas envolvidas: Aluno, Curso
+Fluxo: O aluno é registrado na tabela Aluno, associando-o a um curso específico.
+Resultado: O aluno está agora vinculado ao curso escolhido e pode acessar todas as suas informações acadêmicas.
+Aluno Escolhe as Disciplinas para o Semestre
+
+Ação: O aluno escolhe as disciplinas que irá cursar, desde que os horários não se sobreponham.
+Tabelas envolvidas: Aluno, Disciplina, Matriculado, Disciplina_Curso
+Fluxo: O aluno consulta a tabela de disciplinas ofertadas para o semestre (vinculadas ao seu curso). Em seguida, é possível se matricular nas disciplinas disponíveis. A matrícula do aluno na disciplina é registrada na tabela Matriculado, associando o aluno à disciplina escolhida.
+Resultado: O aluno agora está matriculado nas disciplinas do semestre.
+Atribuição de Professores às Disciplinas
+
+Ação: Cada disciplina tem um professor responsável.
+Tabelas envolvidas: Professor, Disciplina
+Fluxo: A tabela Disciplina contém a referência ao professor responsável. Apenas um professor pode ministrar uma disciplina por vez.
+Resultado: O professor associado será o responsável pela ministração e avaliação das provas e trabalhos na disciplina.
+Professores Definem Pré-Requisitos para as Disciplinas
+
+Ação: Os professores definem pré-requisitos para as disciplinas, se houver.
+Tabelas envolvidas: Disciplina, Pré_Requisitos
+Fluxo: Algumas disciplinas podem ter pré-requisitos (como cálculo básico antes de cálculo avançado). Esses pré-requisitos são registrados na tabela Pré_Requisitos, vinculando disciplinas e seus pré-requisitos.
+Resultado: O aluno deve passar na disciplina de pré-requisito antes de poder se matricular na disciplina que exige esse pré-requisito.
+Oferta de Disciplinas no Semestre
+
+Ação: O semestre começa e as disciplinas são oferecidas.
+Tabelas envolvidas: Oferta_de_Disciplina, Disciplina
+Fluxo: As disciplinas são oferecidas no semestre específico. Na tabela Oferta_de_Disciplina, são armazenadas as informações sobre a oferta de cada disciplina para um semestre (ano e semestre, por exemplo).
+Resultado: Os alunos podem ver quais disciplinas estão disponíveis e se matricular nelas.
+Avaliação dos Alunos nas Disciplinas
+
+Ação: Durante o semestre, os alunos são avaliados por meio de provas e trabalhos.
+Tabelas envolvidas: Matriculado
+Fluxo: As notas das provas (Prova1, Prova2) e dos trabalhos são registradas na tabela Matriculado. O professor deve inserir essas notas e avaliar os alunos.
+Resultado: A tabela Matriculado contém as notas do aluno, e o professor pode monitorar o desempenho ao longo do semestre.
+Cálculo da Média para Aprovação
+
+Ação: A média final de cada aluno é calculada com base nas provas e trabalhos.
+Tabelas envolvidas: Matriculado
+Fluxo: A média final do aluno é calculada automaticamente considerando as notas das provas e trabalhos. Uma fórmula comum seria:
+
+
+Media Final=(Nota Prova 1+Nota Prova 2)2 vezes 0.5+Nota do Trabalho vezes 0.5Media Final=2(Nota Prova 1 + Nota Prova 2) vexes 0.5+Nota do Trabalho vezes 0.5
+
+Resultado: O aluno recebe uma média final que determinará sua aprovação ou reprovação na disciplina.
+Aluno Conclui a Disciplina ou Reprovado
+
+Ação: O aluno pode ser aprovado ou reprovado, dependendo da média final e do desempenho em atividades complementares.
+Tabelas envolvidas: Matriculado
+Fluxo: Quando a média final é calculada e atingiu o valor necessário para aprovação, o aluno é aprovado na disciplina. Caso contrário, o aluno é reprovado e deverá tentar novamente no próximo semestre.
+Resultado: O status do aluno em relação à disciplina será atualizado na tabela Matriculado como Aprovado ou Reprovado.
+Oferta de Extensão
+
+Ação: Os alunos podem participar de cursos de extensão ao longo do semestre.
+Tabelas envolvidas: Extensão, Extensão_has_Alunos
+Fluxo: O aluno pode se matricular em atividades de extensão para complementar sua formação. Essas informações são registradas na tabela Extensão_has_Alunos.
+Resultado: O aluno agora está registrado como participante de atividades de extensão.
+Finalização do Semestre
+
+Ação: Após o término do semestre, as informações sobre a performance do aluno nas disciplinas são consolidadas.
+Tabelas envolvidas: Matriculado, Disciplina, Oferta_de_Disciplina
+Fluxo: Ao final do semestre, o sistema gera um relatório final com o desempenho de cada aluno em cada disciplina.
+Resultado: Os alunos recebem seus certificados ou diplomas, e o ciclo de matrícula e avaliação começa novamente no próximo semestre.
+Resumo do Fluxo:
+Aluno se matricula em um curso e escolhe disciplinas.
+Professor ministra as disciplinas e define pré-requisitos.
+Aluno se matricula nas disciplinas oferecidas, respeitando pré-requisitos e horários.
+Professor avalia aluno através de provas e trabalhos, registrando as notas.
+A média final é calculada e determina se o aluno foi aprovado ou reprovado.
+Aluno participa de atividades de extensão, se desejado.
+Finaliza-se o semestre, e as informações de desempenho são consolidadas para cada aluno.
