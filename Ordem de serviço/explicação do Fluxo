@@ -1,0 +1,6 @@
+Explicação do Fluxo:
+Cliente faz um Pedido para solicitar um serviço.
+O Pedido passa por uma Análise do Pedido, que pode resultar em aprovação ou rejeição.
+Caso aprovado, o Pedido gera uma Ordem de Serviço para execução.
+A Ordem de Serviço é atribuída a um Responsável que gerencia a execução do serviço.
+A Ordem de Serviço pode ter um status que reflete o andamento da execução, como "Em andamento" ou "Concluído".
